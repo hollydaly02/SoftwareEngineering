@@ -7,6 +7,7 @@ public class Calculator {
         System.out.println("Enter mathematical expression here: ");
         String mathExpression = sc.nextLine();
         String numbers[] = mathExpression.replaceAll("[+*-]","").split(""); //array of only the numbers in the string
+        String operators [] = mathExpression.replaceAll("[0-9]","").split(""); //array of operators passed in
     }
 
 }

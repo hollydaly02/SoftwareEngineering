@@ -7,7 +7,7 @@ You should apply the branching concept in your repo for developing the program. 
 
 Note the following:
 
-a) You need to submit a short document with a brief description of the contribution of each member, a link to the repo and a graph of the commit log.
-b) You need to add the account ‘demonstrators’ to the repo.
-c) Late submissions will result in a penalty of 4 marks per day.
+a) You need to submit a short document with a brief description of the contribution of each member, a link to the repo and a graph of the commit log.\
+b) You need to add the account ‘demonstrators’ to the repo.\
+c) Late submissions will result in a penalty of 4 marks per day.\
 d) The submission deadline is on Monday 10/10/2022 at 23:59

@@ -33,6 +33,13 @@ public class Calculator {
                      userInput[i] == '-' ||
                      userInput[i] == '*' ) {
 
+            	char x = userInput[i+1];                      // If two operators follow each other, throw exception
+            	if(x == '+' ||                   
+                   x == '-' ||
+                   x == '*' ) {
+            		throw new ArithmeticException("Two operators"); 
+            	}
+
                 while (!operators.empty() &&                  // While the operator at the top of the stack has the same or greater precedence as the current operator
                         hasPrecedence(userInput[i],operators.peek()))
                     numbers.push(applyOp(operators.pop(),
@@ -47,7 +54,7 @@ public class Calculator {
                                  numbers.pop(),
                                  numbers.pop()));
         
-        return String.valueOf(numbers.pop());                                 // The character at the top of the numbers stack is our result, return result     
+        return String.valueOf(numbers.pop());                 // The character at the top of the numbers stack is our result, return result     
     }
 
     public static boolean hasPrecedence(char operator1, char operator2) { 

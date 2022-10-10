@@ -66,42 +66,43 @@ public class CalculatorTest {
 	
 	@Test
 	public void testSubtractionAndAdditionwithMultiplication() {
-		// -+*
+		// Testing with both positive and negative answers
+		// Testing order: -+*
 		String question = "50-4+5*8";
 		String answer = Calculator.Calculator(question);
 		String expectedAnswer = "86";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// *+-
+		// Testing order: *+-
 		question = "10*2+5-7";
 		answer = Calculator.Calculator(question);
-		expectedAnswer = "18"; //XXXX
+		expectedAnswer = "18";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// +-*
+		// Testing order: +-*
 		question = "6+4-5*77";
 		answer = Calculator.Calculator(question);
 		expectedAnswer = "-375";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// *-+
+		// Testing order: *-+
 		question = "72*3-8+9";
 		answer = Calculator.Calculator(question);
 		expectedAnswer = "217";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// +*-
+		// Testing order: +*-
 		question = "30+14*6-5";
 		answer = Calculator.Calculator(question);
 		expectedAnswer = "109";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// +*-
+		// Testing order: +*-
 		question = "8+66*4-57";
 		answer = Calculator.Calculator(question);
 		expectedAnswer = "215";

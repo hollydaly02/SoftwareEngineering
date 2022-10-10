@@ -18,5 +18,5 @@ public class CalculatorTest {
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
-	
+
 }

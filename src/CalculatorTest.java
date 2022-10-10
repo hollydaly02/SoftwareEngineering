@@ -29,6 +29,13 @@ public class CalculatorTest {
 		String expectedAnswer = "5";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
+		
+		// negative answer
+		String question = "6-8";
+		String answer = Calculator.Calculator(question);
+		String expectedAnswer = "-2";
+		
+		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
 	
 	@Test

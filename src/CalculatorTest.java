@@ -144,6 +144,17 @@ public class CalculatorTest {
     	exception.expectMessage("Repeat operators");
     	String question = "1++2";
 	    String answer = Calculator.Calculator(question);
+	    
+	    exception.expect(ArithmeticException.class);
+    	exception.expectMessage("Repeat operators");
+    	String question = "3-*2";
+	    String answer = Calculator.Calculator(question);
+	    
+	    exception.expect(ArithmeticException.class);
+    	exception.expectMessage("Repeat operators");
+    	String question = "5+7*2-+1";
+	    String answer = Calculator.Calculator(question);
+
 	    }
 
 }

@@ -45,6 +45,13 @@ public class CalculatorTest {
 		String expectedAnswer = "24";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
+		
+		//multiplying by zero
+		String question = "3*0";
+		String answer = Calculator.Calculator(question);
+		String expectedAnswer = "0";
+		
+		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
 	
 	@Test

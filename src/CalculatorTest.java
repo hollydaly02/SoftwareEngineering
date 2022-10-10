@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 
 public class CalculatorTest {
@@ -119,5 +121,15 @@ public class CalculatorTest {
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
+	
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+    @Test
+	public void testRepeatOperators() {
+    	exception.expect(ArithmeticException.class);
+    	exception.expectMessage("Repeat operators");
+    	String question = "1++2";
+	    String answer = Calculator.Calculator(question);
+	    }
 
 }

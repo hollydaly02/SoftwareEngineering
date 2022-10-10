@@ -33,7 +33,14 @@ public class App {
             else if (userInput[i] == '+' ||                   // If character is an operator (not including division)
                      userInput[i] == '-' ||
                      userInput[i] == '*' ) {
-
+            	
+            	char x = userInput[i+1];                      // If two operators follow each other, throw exception
+                if(x == '+' || 
+                   x == '-' || 
+                   x == '*' ) {
+                    throw new ArithmeticException("Repeat operators"); 
+                }
+                
                 while (!operators.empty() &&                  // While the operator at the top of the stack has the same or greater precedence as the current operator
                         hasPrecedence(userInput[i],operators.peek()))
                     numbers.push(applyOp(operators.pop(),

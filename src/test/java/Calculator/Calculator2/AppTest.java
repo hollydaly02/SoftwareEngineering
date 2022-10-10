@@ -1,9 +1,10 @@
+package Calculator.Calculator2;
 import static org.junit.Assert.*;
 
+import org.junit.Test;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 
 public class AppTest {
 
@@ -29,13 +30,6 @@ public class AppTest {
 		String expectedAnswer = "5";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
-		
-		// negative answer
-		String question = "6-8";
-		String answer = App.Calculator(question);
-		String expectedAnswer = "-2";
-		
-		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
 	
 	@Test
@@ -43,13 +37,6 @@ public class AppTest {
 		String question = "4*6";
 		String answer = App.Calculator(question);
 		String expectedAnswer = "24";
-		
-		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
-		
-		//multiplying by zero
-		String question = "3*0";
-		String answer = App.Calculator(question);
-		String expectedAnswer = "0";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
@@ -83,43 +70,42 @@ public class AppTest {
 	
 	@Test
 	public void testSubtractionAndAdditionwithMultiplication() {
-		// Testing with both positive and negative answers
-		// Testing order: -+*
+		// -+*
 		String question = "50-4+5*8";
 		String answer = App.Calculator(question);
 		String expectedAnswer = "86";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// Testing order: *+-
+		// *+-
 		question = "10*2+5-7";
 		answer = App.Calculator(question);
-		expectedAnswer = "18";
+		expectedAnswer = "18"; //XXXX
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// Testing order: +-*
+		// +-*
 		question = "6+4-5*77";
 		answer = App.Calculator(question);
 		expectedAnswer = "-375";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// Testing order: *-+
+		// *-+
 		question = "72*3-8+9";
 		answer = App.Calculator(question);
 		expectedAnswer = "217";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// Testing order: +*-
+		// +*-
 		question = "30+14*6-5";
 		answer = App.Calculator(question);
 		expectedAnswer = "109";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 		
-		// Testing order: +*-
+		// +*-
 		question = "8+66*4-57";
 		answer = App.Calculator(question);
 		expectedAnswer = "215";
@@ -137,24 +123,24 @@ public class AppTest {
 	}
 	
 	@Rule
-	public ExpectedException exception = ExpectedException.none();
+    public ExpectedException exception = ExpectedException.none();
     @Test
-	public void testRepeatOperators() {
-    	exception.expect(ArithmeticException.class);
-    	exception.expectMessage("Repeat operators");
-    	String question = "1++2";
-	    String answer = App.Calculator(question);
-	    
-	    exception.expect(ArithmeticException.class);
-    	exception.expectMessage("Repeat operators");
-    	String question = "3-*2";
-	    String answer = App.Calculator(question);
-	    
-	    exception.expect(ArithmeticException.class);
-    	exception.expectMessage("Repeat operators");
-    	String question = "5+7*2-+1";
-	    String answer = App.Calculator(question);
+    public void testRepeatOperators() {
+        exception.expect(ArithmeticException.class);
+        exception.expectMessage("Repeat operators");
+        String question = "1++2";
+        String answer = App.Calculator(question);
 
-	    }
+        exception.expect(ArithmeticException.class);
+        exception.expectMessage("Repeat operators");
+         question = "3-2";
+         answer = App.Calculator(question);
+
+        exception.expect(ArithmeticException.class);
+        exception.expectMessage("Repeat operators");
+         question = "5+72-+1";
+         answer = App.Calculator(question);
+
+        }
 
 }

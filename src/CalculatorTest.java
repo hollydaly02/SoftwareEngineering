@@ -29,6 +29,13 @@ public class CalculatorTest {
 		String expectedAnswer = "5";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
+		
+		// negative answer
+		String question = "6-8";
+		String answer = Calculator.Calculator(question);
+		String expectedAnswer = "-2";
+		
+		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
 	
 	@Test
@@ -36,6 +43,13 @@ public class CalculatorTest {
 		String question = "4*6";
 		String answer = Calculator.Calculator(question);
 		String expectedAnswer = "24";
+		
+		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
+		
+		//multiplying by zero
+		String question = "3*0";
+		String answer = Calculator.Calculator(question);
+		String expectedAnswer = "0";
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
@@ -130,6 +144,17 @@ public class CalculatorTest {
     	exception.expectMessage("Repeat operators");
     	String question = "1++2";
 	    String answer = Calculator.Calculator(question);
+	    
+	    exception.expect(ArithmeticException.class);
+    	exception.expectMessage("Repeat operators");
+    	String question = "3-*2";
+	    String answer = Calculator.Calculator(question);
+	    
+	    exception.expect(ArithmeticException.class);
+    	exception.expectMessage("Repeat operators");
+    	String question = "5+7*2-+1";
+	    String answer = Calculator.Calculator(question);
+
 	    }
 
 }

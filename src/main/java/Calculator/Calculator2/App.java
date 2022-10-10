@@ -1,3 +1,4 @@
+package Calculator.Calculator2;
 /* A Java program to evaluate a
 given expression where userInput
 are separated by space.
@@ -5,7 +6,7 @@ are separated by space.
 import java.util.Stack;
 import java.util.Scanner;
 
-public class Calculator {
+public class App {
     public static String Calculator(String expression) {
         char[] userInput = expression.toCharArray();          // Converts string to sequence of characters
 
@@ -33,13 +34,6 @@ public class Calculator {
                      userInput[i] == '-' ||
                      userInput[i] == '*' ) {
 
-            	char x = userInput[i+1];                      // If two operators follow each other, throw exception
-            	if(x == '+' ||                   
-                   x == '-' ||
-                   x == '*' ) {
-            		throw new ArithmeticException("Repeat operators"); 
-            	}
-
                 while (!operators.empty() &&                  // While the operator at the top of the stack has the same or greater precedence as the current operator
                         hasPrecedence(userInput[i],operators.peek()))
                     numbers.push(applyOp(operators.pop(),
@@ -54,7 +48,7 @@ public class Calculator {
                                  numbers.pop(),
                                  numbers.pop()));
         
-        return String.valueOf(numbers.pop());                 // The character at the top of the numbers stack is our result, return result     
+        return String.valueOf(numbers.pop());                                 // The character at the top of the numbers stack is our result, return result     
     }
 
     public static boolean hasPrecedence(char operator1, char operator2) { 
@@ -90,7 +84,7 @@ public class Calculator {
                 break;
             }
         	else {
-        	System.out.println(Calculator.Calculator(mathExpression));
+        	System.out.println(App.Calculator(mathExpression));
         	}
         }
         System.out.println("Goodbye");

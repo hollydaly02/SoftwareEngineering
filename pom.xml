@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Calculator</groupId>
-  <artifactId>Calculator</artifactId>
-  <version>1.0</version>
+  <groupId>com.journaldev.maven</groupId>
+  <artifactId>Calculator_maven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
-  <name>Calculator</name>
+  <name>Calculator_maven</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,12 +25,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-params</artifactId>
-    <version>5.8.1</version>
-    <scope>test</scope>
-</dependency>
   </dependencies>
 
   <build>

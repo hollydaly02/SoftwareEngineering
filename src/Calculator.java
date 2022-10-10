@@ -37,7 +37,7 @@ public class Calculator {
             	if(x == '+' ||                   
                    x == '-' ||
                    x == '*' ) {
-            		throw new ArithmeticException("Two operators"); 
+            		throw new ArithmeticException("Repeat operators"); 
             	}
 
                 while (!operators.empty() &&                  // While the operator at the top of the stack has the same or greater precedence as the current operator

@@ -117,5 +117,15 @@ public class CalculatorTest {
 		
 		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
 	}
+	
+	@Test
+	public void failedTest () {
+		String question = "2+2";
+		String answer = Calculator.Calculator(question);
+		String expectedAnswer = "3";
+		
+		assertEquals ("The expected answer must match the answer.", expectedAnswer, answer);
+	
+	}
 
 }
